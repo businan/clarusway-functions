@@ -1,0 +1,4 @@
+*** First Class Objects ***
+https://www.freecodecamp.org/news/discover-the-power-of-first-class-functions-fd0d7b599b69/
+
+https://flaviocopes.com/javascript-iife/

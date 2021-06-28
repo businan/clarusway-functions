@@ -1,4 +1,4 @@
-let num1 = 10;
+/* let num1 = 10;
 var num2 = 20;
 console.log('at the global scope');
 console.log({ num1, num2 });
@@ -44,4 +44,34 @@ const sayHi2 = function greet() {
   console.trace();
 };
 sayHi();
-sayHi2();
+sayHi2(); */
+
+
+// Block Scope
+
+/* // console.log('outside before if block var a: ', a)
+// console.log('outside before if block var b: ', b)
+
+if (true) {
+  var a = "value a"
+  let b = "value b"
+  console.log('inside if block var a: ', a)
+  console.log('inside if block var b: ', b)
+}
+// console.log('outside after if block var a: ', a)
+// console.log('outside after if block var b: ', b) */
+
+
+// Function Scope
+
+/* const sayHi = function sayHi() {
+  var a = "value a"
+  let b = "value b"
+  console.log('inside function block var a: ', a)
+  console.log('inside function block var b: ', b)
+};
+
+sayHi()
+
+console.log('outside  function block var a: ', a)
+console.log('outside  function block var b: ', b) */

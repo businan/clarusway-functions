@@ -1,188 +1,158 @@
-/* sayHi();
+/* sayHi()
 
 function sayHi() {
-  console.log('Hello');
+    console.log('inside sayHi function')
+    return 'Hello'
 }
-sayHi();
 console.log(sayHi()) */
-
-
-
-
-
-/* function sayHi() {
-  console.log('Hi! World');
-  return 'Hi!';
-} 
-
-sayHi();
-console.log(sayHi()) */
-
-
-
-
 
 /* function sayHi(name) {
-  console.log(`Hello! ${name}`);
-  name = 'John';
+  
+  name = 'Jhon';
   console.log(name);
+  console.log(`Hello! ${name}`);
 }
 
-let myName = 'Matthew';
+let myName = 'Leon';
 sayHi(myName);
-console.log(myName); */
+console.log(myName);
+ */
 
-/* let student = {};
-student.name = 'Matthew';
+/* let student = {name: "Leon"}
 
-function sayHi2(st) {
-  console.log(`Hello! ${st.name}`);
-  st.name = 'John';
-  // st = {name: "Bart"}
-  console.log(st.name);
-  console.log( typeof st);
+function sayHi2(student) {
+  console.log(`Hello! ${student.name}`);
+  student.name = 'John';
+  student = {name: "Bart"}
+  console.log(student.name);
 }
 sayHi2(student);
 console.log(student.name); */
 
-
-
-
-
-
 /* function sum(a, b) {
-  return a + b;
+    return a + b;
 }
 
-function addThree(num1) {
-  // calling another function within function
-  return sum(num1, 3);
+function addTwo(number) {
+    return sum(parseInt(number), 2);
 }
 
-console.log(addThree(3)) */
-
-
-/* function isEven(num){
-   return !(num%2)
-}
-console.log(isEven(2));
-
-console.log(typeof !undefined);
-console.log( !undefined); */
-
-
-
-
-
+console.log(addTwo("5")); */
 
 /* function div(num1, num2) {
-  if (num2 === 0) {
-    return 'Zero divition error';
-  }
-  // some work
-  return num1 / num2;
+    if (num2 === 0)  {
+        return "Zero divition error"
+    }
+    return num1 / num2
+    
 }
 
 function div2(num1, num2) {
-  return num2 ? num1 / num2 : 'Zero divition error';
+    return num2 === 0 ? "Zero divition error"  : num1 / num2
+    // return num2 ? num1 / num2 : 'Zero divition error';
 }
 
-console.log(div(3, 0));
-console.log(div2(3, 0)); */
 
+console.log(div(3,2))
+console.log(div2(3,0))
 
+const div3 = (num1, num2) => num2 === 0 ? "Zero division error" : num1 / num2
+console.log(div3(3,2)) */
 
+// result  = 1 + 2 + 3 + 4 + 5
 
-
-
-/* 
-let num1 = 5;
-let num2 = 1;
-let result;
-
-if (num2 === 0) {
-  result = 0;
-} else {
-  result = num1 / num2;
-}
-
-console.log(result);
-  */
-
-
-
-
-
-
-
-/* let sum;
-// sum = 1 + 2 + 3 + 4 + 5 + .... n
-function pascalSum1(n) {
-    return (n * (n + 1)) / 2;
-}
-
-function pascalSum2(n) {
-    // with loop
-    // var sum;
+/* function pascalNumber1(n) {
     let sum = 0;
-    while (n >= 0) {
-        sum += n;
-        n--;
+    for (let i = 1; i <= n; i++) {
+        //console.log(i)
+        sum += i;
     }
     return sum;
 }
 
-function pascalSum3(n) {
-    // with recursive
-    // console.trace(n);
+function pascalNumber2(n) {
+    return (n * (n + 1)) / 2;
+}
+
+function pascalNumber3(n) {
     if (n === 1) return 1;
-    return n + pascalSum3(n - 1);
+    return n + pascalNumber3(n - 1); 
+    // return 5 + pascalNumber3(4) 
+    // retrun 5 + 4 +pascalNumber3(3)
+    // return 5 + 4 + 3 + pascalNumber3(2)
+    // return 5 + 4 + 3 + 2 + pascalNumber3(1)
+    // return 5 + 4 + 3 + 2 + 1
 }
 
-console.log("Result for number 5:", pascalSum2(5)); */
+// console.log(pascalNumber1(9));
+// console.log(pascalNumber2(9));
+console.log(pascalNumber3(5)); */
 
-
-
-
-
-
-
-/* function greet(user) { 
-  user = user || 'Mız mız';
-  console.log(`Welcome! ${user}`);
+/* function sum() {
+    // console.log(arg)
+    // console.log(arguments)
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+    
+        // console.log(arguments[i])
+        sum += arguments[i];
+    }
+    // console.log(sum)
+    return sum;
+    
 }
+console.log(sum(1,2,3,4,5)) */
 
-greet('Mark');
-greet(' ')
-// greet(0)
-// greet(); // ? what will the output be
-
-function greet2(user = 'Mız mız') {
-  console.log(`Welcome! ${user}`);
+/* function sum(...numbers) {
+    console.log(numbers)
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+    
+        // console.log(arguments[i])
+        sum += numbers[i];
+    }
+    // console.log(sum)
+    return sum;
+    
 }
+console.log(sum(1,2,3,4,5,6,7)) */
 
-greet2('Mark');
-greet2(' ')
-// greet2(0)
-// greet2(); // ? what will the output be */
+/* function myConcat(separator, second, ...others) {
+    console.log(separator);    
+    console.log(arguments);
+    console.log(others)
+    
+    let result = ''; // initialize list
+    // iterate through arguments
+    for (let i = 0; i < others.length; i++) {
+       result += others[i] + separator;  // red, orange, blue,
+    }
+    return result;
+ }
+ 
+ // returns "red, orange, blue, "
+ console.log(myConcat(', ', 'red', 'orange', 'blue')); */
 
-
-
-
-
-
+/*  function greet(user = 'User') {
+    console.log(`Welcome! ${user}`);
+  }
+  
+  greet('Leon');
+  greet('')
+  greet(0)
+  greet(); // ? what will the output be  */
 
 /* console.log(sayHi1());
 // console.log(sayHi2());
 
 function sayHi1() {
-  return 'Hello! sayhi1';
+  return 'Hello! from sayhi1';
 }
 const sayHi2 = function greet() {
-  return 'Hello! from 2';
+  return 'Hello! from sayHi2';
 };
 console.log(sayHi2());
-// console.log(greet()); */
+console.log(greet()); */
 
 /* const pascal = function pascalSum(n) {
   // with recursive
@@ -192,125 +162,154 @@ console.log(sayHi2());
 
 console.log(pascal(5)) */
 
+/* let result = (function trian(num) {
+    if (num === 1) return 1;
+    return num + trian(num-1);
+})(3);
 
+let result2 = (function trian(num){
+    if (num === 1) return 1;
+    return num + trian(num-1);
+})(6)
 
+console.log(result)
+console.log(result2) */
 
+/* (function sumNumber(n) {
+    var sum = 0;
+    while (n >= 0) {
+      sum += n;
+      n--;
+    }
+    console.log('result', sum);
+})(6); 
+// console.log(sumNumber(5)) */
 
-/* (function (n) {
-  var sum = 0;
-  while (n >= 0) {
-    sum += n;
-    n--;
+/* let n = 5
+const iife = function(n){
+    console.log(n)
+    return n
+}(n);
+
+console.log(iife);  */
+
+/* console.log(mult(4, 6));
+function mult (n1, n2) {
+    return n1 * n2;
   }
-  console.log('result', sum);
-})(4); */
+
+const mult1 = function (n1, n2) {
+  return n1 * n2;
+};
+
+const mult2 = (num1, num2) => (num1 * num2);
+
+// console.log(sumWithSameNumber(5));
+
+const sumWithSameNumber = num => {
+    console.log(num)
+    return num + num;
+} 
+
+
+console.log(mult1(4, 6));
+console.log(mult2(4, 6));
+console.log(sumWithSameNumber(5)); */
 
 
 
+/* const car = () => {
+    return { name: "BMW" };
+};
 
+const car2 = () => ({ name: "BMW" })
 
-/* -(function() {
-  console.log(1)
-})() 
-+(function() {
-    console.log(1)
-  })()
-
-~(function() {
-  console.log(1)
-})()
+console.log(car());
+console.log(car2());
  */
 
 
 
 
-/* var iife = function (){
-  return 'Immediately Invoked Function Expressions(IIFEs) example ';
-}();
-console.log(iife); // 'Immediately Invoked Function Expressions(IIFEs) example ' */
+/* // Block Scope
 
+console.log('outside before if block var a: ', a)
+// console.log('outside before if block var b: ', b)
 
-
-
-
-/* // const car = () => {
-//   return { make: "Bmw" } // car() returns returns {make: "Bmw"}
-// } 
-
-// const car = () =>  { make: "Bmw" } // car() returns undefined
-
-
-const car = () => ({ make: "Bmw" }) // car() returns {make: "Bmw"}
-console.log(car()) */
-
-
-
-
-
-/* var arguments = [1, 2, 3];
-var arr = () => arguments[0];
-
-console.log(arr()); // 1
-
-function foo(n) {
-  var f = () => arguments[0] + n; // foo's implicit arguments binding. arguments[0] is n
-  return f();
+if (true) {
+  var a = "value a"
+  let b = "value b"
+  console.log('inside if block var a: ', a)
+  console.log('inside if block var b: ', b)
 }
-
-console.log(foo(3)); // 3 + 3 = 6 */
-
-
+// console.log('outside after if block var a: ', a)
+// console.log('outside after if block var b: ', b)   */
 
 
-/* function myConcat(separator) {
-    console.log(separator);    
-    console.log(arguments);
-    
-    
-    let result = ''; // initialize list
-    // iterate through arguments
-    for (let i = 1; i < arguments.length; i++) {
-       result += arguments[i] + separator;
+
+/* console.log('outside  function block var a: ', a)
+console.log('outside  function block var b: ', b)
+
+
+function sayHi() {
+  var a = "value a"
+  let b = "value b"
+  console.log('inside function block var a: ', a)
+  console.log('inside function block var b: ', b)
+};
+
+sayHi()
+
+// console.log('outside  function block var a: ', a)
+// console.log('outside  function block var b: ', b)
+ */
+
+/* const cat = {
+    name: 'Mizza',
+    age: 8,
+    whatName() {
+        console.log(this)
+        return this.whatName
     }
-    return result;
- }
- 
- // returns "red, orange, blue, "
- console.log(myConcat(', ', 'red', 'orange', 'blue'));
- 
- // returns "elephant; giraffe; lion; cheetah; "
- console.log(myConcat('; ', 'elephant', 'giraffe', 'lion', 'cheetah'));
- 
- // returns "sage. basil. oregano. pepper. parsley. "
- console.log(myConcat('. ', 'sage', 'basil', 'oregano', 'pepper', 'parsley')); */
+};
+console.log(cat.whatName());  
+console.log(cat.name);  
+console.log(cat.age);   */
 
 
 
+let num1 = 10;
+var num2 = 20;
+console.log('at the global scope');
+console.log({ num1, num2 });
+func1();
+console.log({ num1, num2 });
+// console.log({ num3, num4 });
 
-
-/* function myFun(a, b, ...manyMoreArgs) {
-    console.log("a", a);
-    console.log("b", b);
-    console.log("manyMoreArgs", manyMoreArgs);
+// function declaration
+function func1() {
+  let num1 = 101;
+  let num2 = 102;
+  var num3 = 103;
+  console.log('..inside func1');
+  if (num1 < num2) {
+    console.log('inside if block');
+    let num1 = 201;
+    // var num2 = 205;
+    console.log({ num1, num2 });
+    // console.log({ num3, num4 });
+    // let num3 = 206;
+    var num4 = 204;
+    num1++;
+    num2++;
+    num3++;
+    num4++;
+    console.log({ num1, num2 });
+    console.log({ num3, num4 });
+  }
+  console.log('after if block');
+  num3++;
+  num4++;
+  console.log({ num1, num2 });
+  console.log({ num3, num4 });
 }
-
-myFun("one", "two", "three", "four", "five", "six");
-
-// a, "one"
-// b, "two"
-// manyMoreArgs, ["three", "four", "five", "six"] <-- notice it's an array */
-
-
-
-
-
-/* function multiply(multiplier, ...theArgs) {
-    return theArgs.map((element) => {
-        return multiplier * element;
-    });
-}
-
-let arr = multiply(2, 15, 25, 42);
-console.log(arr); // [30, 50, 84]  */
-
-
